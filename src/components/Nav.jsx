@@ -7,7 +7,7 @@ const StyledNav = styled.nav`
     display: flex;
 `;
 
-function Nav({ setPage }) {
+function Nav({ page, setPage }) {
     const buttons = [
         {
             destination: 'choose',
@@ -27,6 +27,7 @@ function Nav({ setPage }) {
             {buttons.map(button => (
                 <NavButton
                     key={button.destination}
+                    isCurrent={button.destination === page}
                     setPage={setPage}
                     {...button}
                 />
